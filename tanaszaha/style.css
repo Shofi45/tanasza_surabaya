@@ -76,7 +76,7 @@
     background: rgba(2, 6, 23, 0.85);
 }
 
-#home{
+#home {
     background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
                         url('tanaszaha.jpg');
             background-size: cover;
@@ -85,8 +85,16 @@
             background-attachment: fixed;
             display: flex;
             align-items: center;
-            position: relative;
+            min-height: 100vh;
+            color: #f8fafc;    
+    
+}   
+
+#home a{
+    align-items: center;
+    position: flex;
 }
+
 nav.scrolled {
     background: rgba(2, 6, 23, 0.95);
 }
@@ -135,43 +143,83 @@ nav.scrolled {
 /* ============================= */
 @media (max-width: 768px) {
 
-    /* BODY */
     body {
         font-size: 0.95rem;
     }
 
-     #home {
+    #home {
         background-attachment: scroll !important;
+        text-align: center;
     }
-.offcanvas-body {
+
+    .offcanvas-body {
         padding: 1.5rem;
     }
 
-/* ============================= */
-/* OFFCANVAS MENU HORIZONTAL */
-/* ============================= */
+    #home a {
+        display: flex;
+        justify-content: center;
+    }
 
-.offcanvas .navbar-nav {
-    display: flex;
-    flex-direction: row;      /* HORIZONTAL */
-    flex-wrap: wrap;          /* Boleh turun baris */
-    justify-content: center;
-    gap: 0.75rem;
+    /* OFFCANVAS MENU HORIZONTAL */
+    .offcanvas .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .offcanvas .nav-item {
+        width: auto;
+        border: none;
+    }
+
+    .offcanvas .nav-link {
+        padding: 0.6rem 1rem;
+        border-radius: 999px;
+        background: rgba(59,130,246,0.15);
+        font-weight: 500;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    /* NAVBAR LINK MOBILE */
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        padding: 0.85rem 1rem !important;
+    }
+
+    /* CONTAINER */
+    .container {
+        padding-left: 1.2rem !important;
+        padding-right: 1rem !important;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .gallery-container {
+        height: 220px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
 }
 
-.offcanvas .nav-item {
-    width: auto;
-}
 
-.offcanvas .nav-link {
-    padding: 0.6rem 1rem;
-    border-radius: 999px;
-    background: rgba(59,130,246,0.15);
-    font-weight: 500;
-    font-size: 0.95rem;
-    text-align: center;
-    white-space: nowrap;
-}
 
 
     /* NAVBAR MOBILE */
@@ -272,7 +320,7 @@ nav.scrolled {
         font-size: 0.65rem;
         padding: 8px 10px;
     }
-}
+
 
 /* ============================= */
 /* LAYAR SANGAT KECIL */
@@ -365,6 +413,10 @@ nav.scrolled {
 /* ================================= */
 @media (max-width: 380px) {
 
+    body {
+        font-size: 0.9rem;
+    }
+
     #home h1 {
         font-size: 2rem !important;
     }
@@ -373,12 +425,8 @@ nav.scrolled {
         height: 190px;
     }
 
-    #home .container,
-    #about .container,
-    #gallery .container,
-    #campus .container,
-    #contact .container {
-        max-width: 94%;
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
-}
 }
