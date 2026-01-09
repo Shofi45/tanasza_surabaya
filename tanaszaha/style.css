@@ -181,9 +181,7 @@ nav.scrolled {
         line-height: 1.6;
     }
 
-    #home .awalan{
-        margin-left: 55px;
-    }
+
     #about h3 {
         font-size: 1.5rem;
     }
@@ -220,7 +218,7 @@ nav.scrolled {
 /* MOBILE: PERSEMPIT KONTEN PER SECTION */
 /* HOME • ABOUT • GALLERY • CAMPUS • KONTAK */
 /* ================================= */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
     /* Semua section utama */
     #home .container,
@@ -318,4 +316,5 @@ nav.scrolled {
         max-width: 94%;
     }
 }
+
 }
