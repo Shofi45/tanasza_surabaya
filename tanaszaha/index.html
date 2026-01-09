@@ -24,7 +24,7 @@
     </script>
   
 </head>
-<body class="overflow-x-hidden">
+<body>
 
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav py-3">
         <div class="container">
@@ -67,8 +67,8 @@
                         Tanaszaha Surabaya hadir sebagai perekat ukhuwah santri di perantauan Kota Pahlawan. Menjaga nilai pesantren di tengah modernitas.
                     </p>
                     <div class="awalan flex space-x-4">
-                        <a href="#about" class="border border-blue-600 text-blue-500 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-semibold transition no-underline">Tentang Kami</a>
-                        <a href="#campus" class="border border-blue-600 text-blue-500 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-semibold transition no-underline">Daftar Kampus</a>
+                        <a href="#about" class="border border-blue-600 text-blue-500 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full ">Tentang Kami</a>
+                        <a href="#campus" class="border border-blue-600 text-blue-500 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full ">Daftar Kampus</a>
                     </div>
                 </div>
     
@@ -370,13 +370,24 @@
 
     
          const offcanvasEl = document.getElementById('offcanvasNavbar');
-    const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+    document.querySelectorAll('.offcanvas a.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasEl);
+        if (offcanvasInstance) {
+            offcanvasInstance.hide();
+        }
+    });
+    });
 
     document.querySelectorAll('.offcanvas a.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             offcanvas.hide();
         });
     });
+offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+});
 
     
     </script>
