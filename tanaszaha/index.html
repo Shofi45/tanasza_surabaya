@@ -360,36 +360,46 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // 1. Inisialisasi AOS
         AOS.init({
-             duration: 500,
-         easing: 'ease-in-out',
-          once: false,
-         mirror: true,
-          offset: 120,
+            duration: 500,
+            easing: 'ease-in-out',
+            once: true, // Ubah ke true agar animasi tidak berulang-ulang saat scroll
         });
 
-        // Efek Scroll Navbar
+        // 2. Logika Navbar Scrolled
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.padding = '12px 0';
+            if (window.scrollY > 50) {
                 nav.classList.add('shadow-2xl');
+                nav.style.backgroundColor = 'rgba(2, 6, 23, 0.98)';
+                nav.style.padding = '10px 0';
             } else {
-                nav.style.padding = '20px 0';
                 nav.classList.remove('shadow-2xl');
+                nav.style.backgroundColor = 'rgba(2, 6, 23, 0.85)';
+                nav.style.padding = '20px 0';
             }
         });
 
-         const offcanvasEl = document.getElementById('offcanvasNavbar');
-    const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+        // 3. Logika Menutup Offcanvas setelah Klik (PENTING)
+        const offcanvasEl = document.getElementById('offcanvasNavbar');
+        const bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
 
-    document.querySelectorAll('.offcanvas a.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            offcanvas.hide();
+        // Pilih semua link di dalam menu offcanvas
+        const navLinks = document.querySelectorAll('.offcanvas-body .nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Jangan tutup jika itu dropdown (tapi di kodemu tidak ada dropdown)
+                const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+                if (bootstrapOffcanvas) {
+                    bootstrapOffcanvas.hide();
+                }
+            });
         });
     });
-
     
     </script>
 </body>
 </html>
+
