@@ -1,0 +1,321 @@
+      body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        .bg-gradient-dark {
+            background: linear-gradient(135deg, #020617 0%, #1e3a8a 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #3b82f6;
+        }
+        /* ===== REVISI GALERI RESPONSIF ===== */
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            height: 320px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-container:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(2, 6, 23, 0.95),
+                rgba(2, 6, 23, 0.4),
+                transparent
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.25rem;
+        }
+
+        .kegiatan-tag {
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            padding: 3px 10px;
+            border-radius: 999px;
+            width: fit-content;
+            margin-bottom: 0.4rem;
+        }
+
+     
+      
+        /* FIX BOOTSTRAP NAVBAR + TAILWIND */
+        nav {
+    background: rgba(2, 6, 23, 0.85);
+}
+
+#home{
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
+                        url('tanaszaha.jpg');
+            background-size: cover;
+              
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            position: relative;
+}
+nav.scrolled {
+    background: rgba(2, 6, 23, 0.95);
+}
+.navbar-nav {
+    display: flex !important;
+    flex-direction: row;
+}
+
+.navbar-nav .nav-item {
+    display: block;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    padding: 0.5rem 0.75rem;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3b82f6 !important;
+}
+#home .container,
+    #about .container,
+    #gallery .container,
+    #campus .container,
+    #contact .container {
+        max-width: 90%;
+    }
+
+    .img-uniform {
+    width: 100%;
+    height: 220px;        /* semua tinggi sama */
+    object-fit: cover;   /* potong otomatis tanpa distorsi */
+    border-radius: 12px; /* opsional */ 
+    }
+#home h1 {
+        color: #3b82f6;
+        font-weight: bold;
+        
+          text-shadow: 
+        0 0 6px rgba(0, 247, 255, 0.711);
+       
+}
+
+/* ============================= */
+/* PENYESUAIAN RESPONSIF MOBILE */
+/* ============================= */
+@media (max-width: 768px) {
+
+    /* BODY */
+    body {
+        font-size: 0.95rem;
+    }
+
+    /* NAVBAR MOBILE */
+    .navbar-nav {
+        flex-direction: column !important;
+        width: 100%;
+        padding-top: 0.75rem;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.85rem 1rem !important;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .navbar-nav .nav-link i {
+        width: 20px;
+        text-align: center;
+        color: #3b82f6;
+        font-size: 1rem;
+    }
+
+    /* CONTAINER */
+    .container {
+        padding-left: 1.2rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* JUDUL & PARAGRAF */
+    h1 {
+        font-size: 1.7rem;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    #home .awalan{
+        margin-left: 55px;
+    }
+    #about h3 {
+        font-size: 1.5rem;
+    }
+    /* GLASS CARD */
+    .glass-card {
+        padding: 1rem;
+    }
+
+    /* GALERI */
+    .gallery-container {
+        height: 230px;
+        border-radius: 1rem;
+    }
+
+    .gallery-img {
+        object-fit: cover;
+    }
+
+    .gallery-overlay {
+        padding: 1rem;
+    }
+
+    .kegiatan-tag {
+        font-size: 0.65rem;
+        padding: 8px 10px;
+    }
+}
+
+/* ============================= */
+/* LAYAR SANGAT KECIL */
+/* (iPhone SE, Fold, dll) */
+/* ============================= */
+/* ================================= */
+/* MOBILE: PERSEMPIT KONTEN PER SECTION */
+/* HOME • ABOUT • GALLERY • CAMPUS • KONTAK */
+/* ================================= */
+@media (max-width: 768px) {
+
+    /* Semua section utama */
+    #home .container,
+    #about .container,
+    #gallery .container,
+    #campus .container,
+    #contact .container {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* Home text center & rapi */
+    #home {
+        text-align: center;
+    }
+
+    #home h1 {
+        font-size: 2.4rem !important;
+        line-height: 1.3;
+    }
+
+    #home p {
+        font-size: 0.95rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+ .container p {
+        font-size: 1rem;
+    }   
+
+    .container span {
+        font-size: 1rem;
+    }
+    /* Galeri */
+    .gallery-container {
+        height: 220px;
+    }
+
+
+        #campus .row {
+        row-gap: 1rem;
+    }
+
+    #campus h4 {
+        font-size: 0.95rem;
+        line-height: 1.3;
+    }
+
+    #campus p {
+        font-size: 0.75rem;
+    }
+    /* Kampus card */
+    #campus .glass-card {
+        padding: 1.2rem;
+    }
+
+    .navbar a{
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 0.9rem;
+    }
+     #campus .row {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 0.9rem;
+    }
+     .img-uniform {
+    width: 100%;
+    height: 150px;      
+}
+
+/* ================================= */
+/* LAYAR SANGAT KECIL */
+/* iPhone SE / Fold */
+/* ================================= */
+@media (max-width: 380px) {
+
+    #home h1 {
+        font-size: 2rem !important;
+    }
+
+    .gallery-container {
+        height: 190px;
+    }
+
+    #home .container,
+    #about .container,
+    #gallery .container,
+    #campus .container,
+    #contact .container {
+        max-width: 94%;
+    }
+}
+}
